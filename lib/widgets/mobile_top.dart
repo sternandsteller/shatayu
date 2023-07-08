@@ -6,7 +6,11 @@ class MobileTop extends StatelessWidget {
   final double height;
   final String description;
 
-  MobileTop({required this.text, required this.width, required this.height, required this.description});
+  MobileTop(
+      {required this.text,
+      required this.width,
+      required this.height,
+      required this.description});
 
   @override
   Widget build(BuildContext context) {
@@ -19,16 +23,16 @@ class MobileTop extends StatelessWidget {
           fit: BoxFit.fill,
         ),
         Padding(
-          padding: EdgeInsets.only(left: width/10, top: height/6),
-          child: Image.asset('assets/shatayu.png',
+          padding: EdgeInsets.only(left: width / 10, top: height / 6),
+          child: Image.asset(
+            'assets/shatayu.png',
             width: 50,
           ),
-
         ),
         Padding(
-          padding: EdgeInsets.only(
-              left: width / 3, top: height / 7),
-          child: Text(text,
+          padding: EdgeInsets.only(left: width / 3, top: height / 7),
+          child: Text(
+            text,
             style: TextStyle(
               fontFamily: 'Oswald',
               fontWeight: FontWeight.w600,
@@ -38,7 +42,8 @@ class MobileTop extends StatelessWidget {
           ),
         ),
         Padding(
-          padding: EdgeInsets.only(left: width / 10, top: height/4, right: width/20),
+          padding: EdgeInsets.only(
+              left: width / 10, top: height / 4, right: width / 20),
           child: Text(
             description,
             style: TextStyle(
@@ -50,6 +55,6 @@ class MobileTop extends StatelessWidget {
           ),
         ),
       ],
-    );;
+    );
   }
 }

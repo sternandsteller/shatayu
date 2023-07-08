@@ -5,8 +5,6 @@
 import 'package:carousel_slider/carousel_slider.dart';
 
 import 'package:flutter/material.dart';
-import 'package:shatayu/services/call_and_messages_service.dart';
-import 'package:shatayu/services/service_locator.dart';
 import 'package:shatayu/ui/views/home/home_widgets/cir.dart';
 
 import 'package:shatayu/widgets/nav_bar.dart';
@@ -16,7 +14,6 @@ import 'home_widgets/bottom_home.dart';
 import 'home_widgets/home_about.dart';
 
 class HomeViewLaptop extends StatelessWidget {
-  final CallsAndMessagesService _service = locator<CallsAndMessagesService>();
   final String number = "+919826092380";
   final String email = "madhaviayurved@gmail.com";
 
@@ -31,7 +28,7 @@ class HomeViewLaptop extends StatelessWidget {
           preferredSize: Size.fromHeight(height / 17),
           child: TopBar(height: height, width: width)),
       body: Scrollbar(
-          isAlwaysShown: false,
+          thumbVisibility: false,
           child: ListView(children: [
             Stack(
               children: [

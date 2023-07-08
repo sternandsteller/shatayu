@@ -1,6 +1,5 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_icons/flutter_icons.dart';
 
 class StickyNavBar extends StatelessWidget {
   final Function(int) onTap;
@@ -27,7 +26,7 @@ class StickyNavBar extends StatelessWidget {
           color: Color.fromRGBO(1, 60, 30, 1),
         ),
         Icon(
-          Ionicons.ios_leaf,
+          Icons.media_bluetooth_off_outlined,
           color: Color.fromRGBO(1, 60, 30, 1),
         ),
         Icon(

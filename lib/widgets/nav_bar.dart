@@ -4,7 +4,6 @@ import 'package:shatayu/ui/views/contact_us/contact_us_laptop.dart';
 import 'package:shatayu/ui/views/home/home_view_laptop.dart';
 import 'package:shatayu/ui/views/panchakarma/panchakarma_laptop.dart';
 import 'package:shatayu/ui/views/treatement/treatement_laptop.dart';
-import 'package:flutter_icons/flutter_icons.dart';
 
 class NavBar extends StatefulWidget {
   final double width;
@@ -52,7 +51,7 @@ class _NavBarState extends State<NavBar> {
                     text: 'Diseases',
                   ),
                   GButton(
-                    icon: Ionicons.ios_leaf,
+                    icon: Icons.ac_unit,
                     text: 'Panchakarma',
                   ),
                   GButton(
@@ -67,9 +66,6 @@ class _NavBarState extends State<NavBar> {
                     setState(() {
                       _selectedindex = index;
                     });
-                    Navigator.of(context)!.push(MaterialPageRoute(
-                        builder: (BuildContext context) =>
-                            classes[_selectedindex]));
                   }
                 })));
   }
