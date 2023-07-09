@@ -11,7 +11,6 @@ class HomeView extends StatelessWidget {
     return ScreenTypeLayout(
       mobile: OrientationLayout(
         portrait: HomeMobilePortrait(),
-        // TODO: Make landscape version
         landscape: HomeMobilePortrait(),
       ),
       desktop: HomeViewLaptop(),

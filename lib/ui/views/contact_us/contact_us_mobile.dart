@@ -18,6 +18,7 @@ class ContactUsMobile extends StatelessWidget {
       color: Color.fromRGBO(187, 255, 168, 0.4),
       child: Column(
         children: [
+          TextField(),
           MobileTop(
               text: 'Contact us/'
                   '\n'
@@ -78,7 +79,7 @@ class ContactUsMobile extends StatelessWidget {
                         Padding(
                           padding: EdgeInsets.only(left: 5, right: 5),
                           child: Text(
-                            '+91 9826092380',
+                            '+1MOBILEDART',
                             style: TextStyle(
                                 fontFamily: 'Oswald',
                                 fontWeight: FontWeight.w600,

@@ -9,7 +9,7 @@ class PanchakarmaLaptop extends StatelessWidget {
     double width = MediaQuery.of(context).size.width;
     double height = MediaQuery.of(context).size.height;
     return Scaffold(
-      backgroundColor: Color.fromRGBO(187,255,168,0.8),
+        backgroundColor: Color.fromRGBO(187, 255, 168, 0.8),
         appBar: PreferredSize(
             preferredSize: Size.fromHeight(height / 17),
             child: TopBar(height: height, width: width)),
@@ -20,11 +20,10 @@ class PanchakarmaLaptop extends StatelessWidget {
             text: 'Panchakarma',
           ),
           Padding(
-            padding: EdgeInsets.only(left: width / 10,bottom: 10),
+            padding: EdgeInsets.only(left: width / 10, bottom: 10),
             child: Text(
               'Panchakarma therapies at '
-                  'Shatayu Ayurveda Panchakarma Super Speciality Clinic'
-              ,
+              'Shatayu Ayurveda Panchakarma Xuper Speciality Clinic',
               style: TextStyle(
                   fontFamily: 'Baloo',
                   fontSize: 20,
@@ -34,11 +33,9 @@ class PanchakarmaLaptop extends StatelessWidget {
             ),
           ),
           BuildTiles(false, height: height, width: width),
-
           SizedBox(
             height: height / 8,
           ),
-
           Padding(
             padding: EdgeInsets.only(left: width / 10),
             child: Text(
@@ -51,7 +48,6 @@ class PanchakarmaLaptop extends StatelessWidget {
               ),
             ),
           ),
-
           Padding(
             padding: EdgeInsets.only(
               left: width / 10,
@@ -69,8 +65,7 @@ class PanchakarmaLaptop extends StatelessWidget {
               style: TextStyle(fontFamily: 'OpenSans', fontSize: 20),
             ),
           ),
-
-              Image(
+          Image(
             image: AssetImage('assets/pngfuel.com.bottom.png'),
             width: width,
             height: height / 2.6,
@@ -78,6 +73,4 @@ class PanchakarmaLaptop extends StatelessWidget {
           ),
         ]));
   }
-
-
 }

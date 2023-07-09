@@ -18,19 +18,19 @@ class StickyNavBar extends StatelessWidget {
       index: index,
       items: [
         Icon(
-          Icons.home,
+          Icons.menu,
           color: Color.fromRGBO(1, 60, 30, 1),
         ),
         Icon(
-          Icons.local_hospital,
+          Icons.euro_symbol,
           color: Color.fromRGBO(1, 60, 30, 1),
         ),
         Icon(
-          Icons.media_bluetooth_off_outlined,
+          Icons.badge_sharp,
           color: Color.fromRGBO(1, 60, 30, 1),
         ),
         Icon(
-          Icons.portrait,
+          Icons.settings_accessibility,
           color: Color.fromRGBO(1, 60, 30, 1),
         )
       ],

@@ -4,6 +4,7 @@ portrait and landscape
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
+import 'package:shatayu/constants/routes.dart';
 import 'package:shatayu/ui/views/contact_us/contact_us_mobile.dart';
 import 'package:shatayu/ui/views/home/home_widgets/cir.dart';
 import 'package:shatayu/ui/views/panchakarma/panchakarma_mobile.dart';
@@ -12,6 +13,7 @@ import 'package:shatayu/widgets/mobile_header.dart';
 import 'package:shatayu/widgets/sticky_nav_bar.dart';
 import 'home_widgets/bottom_home.dart';
 import 'home_widgets/home_about.dart';
+import '../../../enums/menu_action.dart';
 
 class HomeMobilePortrait extends StatefulWidget {
   @override
@@ -19,71 +21,19 @@ class HomeMobilePortrait extends StatefulWidget {
 }
 
 class _HomeMobilePortraitState extends State<HomeMobilePortrait> {
+  int bodyIndex = 0;
 
-  final ItemScrollController itemScrollController = ItemScrollController();
-  final ItemPositionsListener itemPositionsListener =
-      ItemPositionsListener.create();
-
-  bool _stick = false;
-
-  late StickyNavBar _navBar;
-  int _navIndex = 0;
-
-  Widget _home(double height, double width) {
-    return Column(
-      children: [
-        CarouselSlider(
-            items: buildCarasoulList(50),
-            options: CarouselOptions(
-              height: height / 4,
-              aspectRatio: 16 / 9,
-              viewportFraction: .35,
-              initialPage: 0,
-              enableInfiniteScroll: true,
-              pauseAutoPlayOnTouch: true,
-              reverse: false,
-              autoPlay: true,
-              autoPlayInterval: Duration(seconds: 10),
-              autoPlayAnimationDuration: Duration(milliseconds: 800),
-              autoPlayCurve: Curves.fastOutSlowIn,
-              enlargeCenterPage: false,
-              scrollDirection: Axis.horizontal,
-            )),
-        HomeAbout(true, height: height, width: width),
-        SizedBox(
-          height: height / 20,
-        ),
-        BottomHome(true, height: height, width: width),
-      ],
-    );
-  }
-
-  void _navOnTap(int index) {
+  void _setBodyIndex(int inBodyIndex) {
     setState(() {
-      _navIndex = index;
+      bodyIndex = inBodyIndex;
+      debugPrint(
+        "bodyIndex=$bodyIndex, inBodyIndex=$inBodyIndex",
+      );
     });
-    itemScrollController.scrollTo(
-        index: index == 0 ? 0 : index + 2,
-        duration: Duration(seconds: 2),
-        curve: Curves.easeInOutCubic);
   }
 
   @override
   void initState() {
-    _navBar = StickyNavBar(onTap: (int index) => _navOnTap(index));
-    itemPositionsListener.itemPositions.addListener(() {
-      if (itemPositionsListener.itemPositions.value.length > 0) {
-        var element = itemPositionsListener.itemPositions.value
-            .where((element) => element.index == 1);
-        if (element.isNotEmpty) {
-          if (element.elementAt(0).itemLeadingEdge < 0 && !_stick) {
-            setState(() => _stick = true);
-          } else if (element.elementAt(0).itemLeadingEdge >= 0 && _stick) {
-            setState(() => _stick = false);
-          }
-        }
-      }
-    });
     super.initState();
   }
 
@@ -92,42 +42,109 @@ class _HomeMobilePortraitState extends State<HomeMobilePortrait> {
     var media = MediaQuery.of(context);
     double height = media.size.height;
     double width = media.size.width;
-
-    List<Widget> _widgets = [
-      MobileHeader(),
-      _navBar,
-      _home(height, width),
-      //Diseases Page
-      TreatementMobile(width: width, height: height),
-      //Panchakarma Page
-      PanchakarmaMobile(width: width, height: height),
-      //Contact Us/Reach Us Page
-      ContactUsMobile(width: width, height: height)
+    List<Widget> _widgetOptions = <Widget>[
+      TreatementMobile(height: height, width: width),
+      ContactUsMobile(height: height, width: width),
+      PanchakarmaMobile(height: height, width: width),
+      HomeAbout(true, height: height, width: width),
     ];
-
+    debugPrint('bi=$bodyIndex');
     return SafeArea(
       child: Scaffold(
+        appBar: _AppBar(context: context),
+        bottomNavigationBar: _BottomNavigationBar(),
         body: Scrollbar(
           child: Stack(
             children: [
               ScrollablePositionedList.builder(
-                itemCount: _widgets.length,
+                itemCount: 1,
                 itemBuilder: (context, index) {
-                  return _widgets[index];
+                  return _widgetOptions[bodyIndex];
                 },
-                itemScrollController: itemScrollController,
-                itemPositionsListener: itemPositionsListener,
               ),
-              _stick
-                  ? StickyNavBar(
-                      onTap: (int index) => _navOnTap(index),
-                      index: _navIndex,
-                    )
-                  : Container(),
             ],
           ),
         ),
       ),
+    );
+  }
+
+  Widget _BottomNavigationBar() {
+    return BottomNavigationBar(
+        backgroundColor: Colors.amber[300],
+        selectedItemColor: Colors.orange[800],
+        currentIndex: 1,
+        showUnselectedLabels: false,
+        items: const [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.login_sharp),
+            label: 'Login',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.app_registration_outlined),
+            label: 'Register',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.notes_sharp),
+            label: 'Your Notes',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.share),
+            label: 'Share',
+          ),
+        ]);
+  }
+
+  AppBar _AppBar({required BuildContext context}) {
+    return AppBar(
+      backgroundColor: Colors.amber[300],
+      title: Column(
+        children: [
+          _BackgroundRow(context: context),
+          _ForgroundRow(context: context)
+        ],
+      ),
+    );
+  }
+
+  Row _BackgroundRow({required BuildContext context}) {
+    return Row(
+      children: <Widget>[
+        IconButton(
+          onPressed: () {},
+          icon: const Icon(Icons.create_sharp),
+        ),
+        IconButton(
+          onPressed: () async {},
+          icon: const Icon(Icons.share),
+        ),
+        Text('Movement As A Service'),
+      ],
+    );
+  }
+
+  Row _ForgroundRow({required BuildContext context}) {
+    return Row(
+      children: [
+        IconButton(
+          onPressed: () async {
+            _setBodyIndex(1);
+          },
+          icon: const Icon(Icons.euro),
+        ),
+        IconButton(
+          onPressed: () async {
+            _setBodyIndex(2);
+          },
+          icon: const Icon(Icons.badge),
+        ),
+        IconButton(
+          onPressed: () async {
+            _setBodyIndex(3);
+          },
+          icon: const Icon(Icons.accessible),
+        ),
+      ],
     );
   }
 }

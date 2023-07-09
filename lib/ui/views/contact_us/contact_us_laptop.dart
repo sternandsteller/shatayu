@@ -79,7 +79,7 @@ class _ContactUsLaptopState extends State<ContactUsLaptop> {
                       Padding(
                         padding: EdgeInsets.only(left: 8),
                         child: Text(
-                          '+91 9826092380',
+                          '+1234234LAPTOPDART',
                           style: TextStyle(
                               fontFamily: 'Oswald',
                               fontWeight: FontWeight.w600,

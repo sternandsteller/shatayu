@@ -1,2 +1,2 @@
-const String number = "+919826092380";
-const String email = "madhaviayurved@gmail.com";
+const String number = "+121341234infodart";
+const String email = "infodart@gmail.com";

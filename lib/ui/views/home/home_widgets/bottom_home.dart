@@ -7,8 +7,7 @@ class BottomHome extends StatelessWidget {
   final double height;
   final double width;
   final bool mobile;
-  BottomHome(this.mobile,
-      {required this.height, required this.width});
+  BottomHome(this.mobile, {required this.height, required this.width});
   final CallsAndMessagesService _service = locator<CallsAndMessagesService>();
   @override
   Widget build(BuildContext context) {
@@ -30,12 +29,12 @@ class BottomHome extends StatelessWidget {
                     height: height / 11,
                   ),
                   Text(
-                    'Dr. Madhavi Wakode',
+                    'Dr. Doodle',
                     style: TextStyle(
                         fontFamily: 'Baloo', color: Colors.white, fontSize: 20),
                   ),
                   Text(
-                    '(B.A.M.S & D.Y.)',
+                    '(B.A.M.S & SPAMS)',
                     style: TextStyle(color: Colors.white),
                   ),
                   Padding(
@@ -47,7 +46,7 @@ class BottomHome extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         IconButton(
-                          tooltip: 'E-7/LIG 376 Arera Colony Bhopal',
+                          tooltip: '5501 BOTTOM HOME DART IL 33422',
                           icon: Icon(
                             Icons.location_on,
                             color: Colors.white,
@@ -68,7 +67,7 @@ class BottomHome extends StatelessWidget {
                           width: mobile ? 30 : 50,
                         ),
                         IconButton(
-                          tooltip: '+91 9826092380',
+                          tooltip: '+91BOTTOMHOMDART',
                           icon: Icon(
                             Icons.call,
                             color: Colors.white,
@@ -89,7 +88,7 @@ class BottomHome extends StatelessWidget {
                           width: mobile ? 30 : 50,
                         ),
                         IconButton(
-                          tooltip: 'madhaviayurved@gmail.com',
+                          tooltip: 'bottomshomedart@gmail.com',
                           icon: Icon(Icons.mail, color: Colors.white),
                           onPressed: () {
                             _service.sendEmail(email);
@@ -109,7 +108,7 @@ class BottomHome extends StatelessWidget {
             backgroundColor: Colors.white,
             child: CircleAvatar(
               radius: 80,
-              backgroundImage: AssetImage('assets/aai.jpg'),
+              backgroundImage: AssetImage('assets/potli.jpg'),
             ),
           ),
           //backgroundImage: ,
@@ -118,4 +117,3 @@ class BottomHome extends StatelessWidget {
     );
   }
 }
-

@@ -1,16 +1,7 @@
 import 'package:flutter/material.dart';
 
-
-List<Widget> buildCarasoulList(double rad){
-   List<Widget> Bir = [
-    CircleAvatar(
-      radius: rad + 5,
-      backgroundColor: Colors.black12,
-      child: CircleAvatar(
-        radius: rad,
-        backgroundImage: AssetImage('assets/potli.jpg'),
-      ),
-    ),
+List<Widget> buildCarasoulList(double rad) {
+  List<Widget> Bir = [
     CircleAvatar(
       radius: rad + 5,
       backgroundColor: Colors.black12,
@@ -24,7 +15,7 @@ List<Widget> buildCarasoulList(double rad){
       backgroundColor: Colors.black12,
       child: CircleAvatar(
         radius: rad,
-        backgroundImage: AssetImage('assets/nasyam.jpg'),
+        backgroundImage: AssetImage('assets/shirodhara1.jpg'),
       ),
     ),
     CircleAvatar(
@@ -32,22 +23,9 @@ List<Widget> buildCarasoulList(double rad){
       backgroundColor: Colors.black12,
       child: CircleAvatar(
         radius: rad,
-        backgroundImage: AssetImage('assets/shirodhara1.jpg'),
+        backgroundImage: AssetImage('assets/ayurved.jpg'),
       ),
     ),
-     CircleAvatar(
-       radius: rad + 5,
-       backgroundColor: Colors.black12,
-       child: CircleAvatar(
-         radius: rad,
-         backgroundImage: AssetImage('assets/ayurved.jpg'),
-       ),
-     ),
-
   ];
-   return Bir;
-
+  return Bir;
 }
-
-
-

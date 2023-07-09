@@ -1,7 +1,3 @@
-/*This file contains the home view of laptop, in landscape mode
-
- */
-
 import 'package:carousel_slider/carousel_slider.dart';
 
 import 'package:flutter/material.dart';
@@ -14,8 +10,8 @@ import 'home_widgets/bottom_home.dart';
 import 'home_widgets/home_about.dart';
 
 class HomeViewLaptop extends StatelessWidget {
-  final String number = "+919826092380";
-  final String email = "madhaviayurved@gmail.com";
+  final String number = "+122424134535";
+  final String email = "sternandasdfs@gmail.com";
 
   @override
   Widget build(BuildContext context) {
@@ -69,7 +65,7 @@ class HomeViewLaptop extends StatelessWidget {
                   child: Text(
                     'Shatayu Ayurveda Panchakarma'
                     '\n'
-                    'Super Speciality Clinic',
+                    'LAPuper Speciality Clinic',
                     style: TextStyle(
                       fontFamily: 'Oswald',
                       fontWeight: FontWeight.w600,

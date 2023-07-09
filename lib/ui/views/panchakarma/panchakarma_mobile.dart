@@ -21,7 +21,7 @@ class PanchakarmaMobile extends StatelessWidget {
               height: height,
               text: 'Panchakarma',
               description: 'Panchakarma therapies at '
-                  'Shatayu Ayurveda Panchakarma Super Speciality Clinic'),
+                  'Shatayu Ayurveda Panchakarma Xuper Speciality Clinic'),
           BuildTiles(true, height: height, width: width),
           Padding(
             padding: EdgeInsets.only(left: width / 9, top: height / 20),
@@ -41,16 +41,16 @@ class PanchakarmaMobile extends StatelessWidget {
             ),
             child: Text(
               '✣ Potli Massage'
-                  '\n'
-                  '✣ Agnikarma'
-                  '\n'
-                  '✣ Viddhha Chikitsa'
-                  '\n'
-                  '✣ JanuBasti, KatiBasti, GreevaBasti, '
-                  '\n'
-                  '✣ HridiyaBasti, UttarBasti, Aansbasti'
-                  '\n'
-                  '✣ Netra Tarpan',
+              '\n'
+              '✣ Agnikarma'
+              '\n'
+              '✣ Viddhha Chikitsa'
+              '\n'
+              '✣ JanuBasti, KatiBasti, GreevaBasti, '
+              '\n'
+              '✣ HridiyaBasti, UttarBasti, Aansbasti'
+              '\n'
+              '✣ Netra Tarpan',
               softWrap: true,
               style: TextStyle(fontFamily: 'Baloo', fontSize: 15),
             ),
@@ -66,4 +66,3 @@ class PanchakarmaMobile extends StatelessWidget {
     );
   }
 }
-

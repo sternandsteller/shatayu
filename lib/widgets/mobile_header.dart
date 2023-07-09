@@ -24,14 +24,14 @@ class MobileHeader extends StatelessWidget {
           padding: EdgeInsets.only(left: 10, top: height / 12),
           child: Image(
             image: AssetImage('assets/shatayu.png'),
-            height: 45,
-            width: 45,
+            height: 100,
+            width: 75,
           ),
         ),
         Padding(
           padding: EdgeInsets.only(top: height / 16, left: width / 5.8),
           child: Text(
-            'Dr. Madhavi\'s',
+            'MaasApps',
             style: TextStyle(
                 fontFamily: 'GreatVibes',
                 fontWeight: FontWeight.w800,
@@ -40,19 +40,19 @@ class MobileHeader extends StatelessWidget {
           ),
         ),
         Padding(
-          padding: EdgeInsets.only(left: width / 5.8, top: height / 12),
+          padding: EdgeInsets.only(left: width / 4, top: height / 12),
           child: Text(
-            'Shatayu Ayurved'
+            'Movement'
             '\n'
-                'Panchakarma'
-                '\n'
-                'Super Speciality Clinic',
+            'As a Service'
+            '\n'
+            'And Apps',
             style: TextStyle(
               fontFamily: 'Oswald',
               fontWeight: FontWeight.w600,
-              fontSize: 28,
+              fontSize: 22,
               color: //Colors.white
-              Color.fromRGBO(1, 60, 30, 1),
+                  Color.fromRGBO(150, 5, 51, 1),
             ),
           ),
         ),
